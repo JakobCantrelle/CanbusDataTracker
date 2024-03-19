@@ -93,7 +93,6 @@ def ProcessCanMessage(can_message):
             BrakePressure = int(parts[5], 16)
             carStatus.UpdateStatus(brakePressure=BrakePressure)
         elif CanCode == "58A":
-            a = 4
             carStatus.UpdateStatus(parkingBrake="On" if parts[3] == "16" else "Off")
         elif CanCode == "5C5":
             OdometerNum = int(parts[4] + parts[5] + parts[6], 16)
